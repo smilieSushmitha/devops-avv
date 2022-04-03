@@ -21,7 +21,7 @@ ansible web -m command -a uptime
 ```bash
 ansible all -m setup
 
-Here all means all hosts.
+Here, all means all hosts in the inventory/hosts file.
 
 ansible localhost -m setup
 
