@@ -1,0 +1,19 @@
+---
+- hosts: web
+  become: yes
+  become_method: sudo
+  tasks:
+
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: latest
+      update_cache: yes
+    notify: start nginx
+  
+  handlers:
+
+  - name: start nginx
+    service:
+      name: nginx
+      state: started
