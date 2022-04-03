@@ -1,0 +1,12 @@
+--- 
+  - name: check disk space
+    hosts: web
+    tasks: 
+    - name: check_disk
+      ansible.builtin.shell:
+        cmd: df -h
+      register: result
+
+    - name: Dispaly result
+      debug: 
+        msg: "{{result.stdout_lines}}"
