@@ -11,11 +11,12 @@ spec:
       app: nginx
   template:
     metadata:
+      name: nginx
       labels:
         app: nginx
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:1.14.2
         ports:
         - containerPort: 80
