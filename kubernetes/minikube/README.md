@@ -1,3 +1,9 @@
+### **Minikube**
+
+> *Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node. Minikube is available for Linux, macOS, and Windows systems.*
+
+
+
 ### **Minikube Installation**
 
 #### **1. To install the latest minikube stable release on x86-64 Linux using binary download:**
