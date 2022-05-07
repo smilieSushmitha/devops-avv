@@ -19,13 +19,13 @@ minikube start
 minikube kubectl -- get po -A
 ```
 
-#### **4. Add the following in the $HOME/.bashrc**
+#### **4. Add the following line in the $HOME/.bashrc file**
 
 ```bash
 alias kubectl="minikube kubectl --"
 ```
 
-#### **5. Test the cluster**
+#### **5. Test your cluster**
 
 ```bash
 kubectl get po -A
