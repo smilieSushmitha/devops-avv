@@ -22,19 +22,22 @@ minikube start
 #### **3. Install Kubectl commandline tool**
 
 ```bash
-minikube kubectl -- get po -A
+sudo snap install kubectl --classic
 ```
 
-#### **4. Add the following line in the $HOME/.bashrc file**
+
+#### **4. Test your cluster**
 
 ```bash
-alias kubectl="minikube kubectl --"
-```
+#cluster info
+kubectl kubectl cluster-info
 
-#### **5. Test your cluster**
+#Node info
+kubectl get nodes -o wide
 
-```bash
-kubectl get po -A
+#Pods running
+kubectl get pods -A
+
 ```
 
 ### **Stop The Minikube Cluster**
