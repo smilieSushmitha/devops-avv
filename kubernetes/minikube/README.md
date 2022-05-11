@@ -19,7 +19,7 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start
 ```
 
-#### Install Kubectl commandline tool**
+#### **Install Kubectl commandline tool**
 
 ```bash
 sudo snap install kubectl --classic
