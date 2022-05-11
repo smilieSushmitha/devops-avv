@@ -51,4 +51,4 @@ minikube delete --all
 
 #### *For more details and commands, click [here](https://minikube.sigs.k8s.io/docs/start/)*
 
-#### *Install and set up kubectl on linux, click [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)*
+#### *Install and setup kubectl on linux, click [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)*
