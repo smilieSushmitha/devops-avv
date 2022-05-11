@@ -30,7 +30,7 @@ sudo snap install kubectl --classic
 
 ```bash
 #cluster info
-kubectl kubectl cluster-info
+kubectl cluster-info
 
 #Node info
 kubectl get nodes -o wide
