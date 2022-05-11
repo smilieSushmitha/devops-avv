@@ -29,9 +29,6 @@ sudo snap install kubectl --classic
 #### **Test your cluster**
 
 ```bash
-#cluster info
-kubectl cluster-info
-
 #Node info
 kubectl get nodes -o wide
 
