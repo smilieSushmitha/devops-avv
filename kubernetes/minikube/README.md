@@ -6,27 +6,27 @@
 
 ### **Minikube Installation**
 
-#### **1. To install the latest minikube stable release on x86-64 Linux using binary download:**
+####  **Install the latest minikube stable release on x86-64 Linux using binary download:**
 
 ```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-#### **2. Start The Minikube Cluster**
+#### **Start The Minikube Cluster**
 
 ```bash
 minikube start
 ```
 
-#### **3. Install Kubectl commandline tool**
+#### Install Kubectl commandline tool**
 
 ```bash
 sudo snap install kubectl --classic
 ```
 
 
-#### **4. Test your cluster**
+#### **Test your cluster**
 
 ```bash
 #cluster info
