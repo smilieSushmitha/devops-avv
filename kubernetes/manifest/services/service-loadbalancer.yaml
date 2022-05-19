@@ -1,9 +1,9 @@
-#ClusterIP Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-clusterip
+  name: nginx-loadbalancer
 spec:
+  type: LoadBalancer
   selector:
     app: nginx
   ports:
