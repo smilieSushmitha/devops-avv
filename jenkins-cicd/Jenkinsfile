@@ -8,7 +8,7 @@ pipeline {
             TASKDEF_FILE='ecs_task_def.json'
             DESIRED_COUNT=1
             REPOSITORY_NAME='avv-jenkins-cicd-demo'
-            REPOSITORY_URI="'${AWS_ACCOUNT}'.dkr.ecr.$REGION.amazonaws.com/$REPOSITORY_NAME"
+            REPOSITORY_URI="${env.AWS_ACCOUNT}.dkr.ecr.${env.REGION}.amazonaws.com/${env.REPOSITORY_NAME}"
     }
     agent any
     stages {
