@@ -31,7 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to Amazon ECS....'
-                docker tag "${SERVICE_NAME}":latest "${REPOSITORY_URI}":latest
+                docker tag ${env.SERVICE_NAME}:latest ${env.REPOSITORY_URI}:latest
                 docker push ${REPOSITORY_URI}:latest
                 echo 'Setting desired container count to 0'
                 aws ecs update-service --cluster ${CLUSTER} --service $SERVICE_NAME --task-definition $TASKDEF_NAME --desired-count 0
