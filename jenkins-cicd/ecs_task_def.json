@@ -12,6 +12,8 @@
             }
          },
          "name": "avv-jenkins-cdcd-demo",
+         "entryPoint": [],
+         "command": [],
          "portMappings": [ 
             { 
                "containerPort": 80,
