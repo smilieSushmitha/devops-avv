@@ -1,14 +1,14 @@
 pipeline {
         environment {
-            REGION="us-east-1"
-            CLUSTER="avv-cicd-demo"
-            AWS_ACCOUNT="250155391967"
-            SERVICE_NAME="avv-jenkins-cicd-demo"
-            TASKDEF_NAME="avv-jenkins-cicd-demo"
-            TASKDEF_FILE="ecs_task_def.json"
+            REGION='us-east-1'
+            CLUSTER='avv-cicd-demo'
+            AWS_ACCOUNT='250155391967'
+            SERVICE_NAME='avv-jenkins-cicd-demo'
+            TASKDEF_NAME='avv-jenkins-cicd-demo'
+            TASKDEF_FILE='ecs_task_def.json'
             DESIRED_COUNT=1
-            REPOSITORY_NAME="avv-jenkins-cicd-demo"
-            REPOSITORY_URI="$AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com/$REPOSITORY_NAME"
+            REPOSITORY_NAME='avv-jenkins-cicd-demo'
+            REPOSITORY_URI='$AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com/$REPOSITORY_NAME'
     }
     agent any
     stages {
@@ -31,13 +31,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to Amazon ECS....'
-                docker tag "$SERVICE_NAME":latest "$REPOSITORY_URI":latest
-                docker push $REPOSITORY_URI:latest
-                echo "Setting desired container count to 0"
-                aws ecs update-service --cluster $CLUSTER --service $SERVICE_NAME --task-definition $TASKDEF_NAME --desired-count 0
-                echo "Updating task definition"
+                docker tag "${SERVICE_NAME}":latest "${REPOSITORY_URI}":latest
+                docker push ${REPOSITORY_URI}:latest
+                echo 'Setting desired container count to 0'
+                aws ecs update-service --cluster ${CLUSTER} --service $SERVICE_NAME --task-definition $TASKDEF_NAME --desired-count 0
+                echo 'Updating task definition'
                 aws ecs register-task-definition --cli-input-json file://$TASKDEF_FILE
-                echo "Deploying to ECS Cluster: $CLUSTER"
+                echo 'Deploying to ECS Cluster: $CLUSTER'
                 aws ecs update-service --cluster $CLUSTER --service $SERVICE_NAME --task-definition $TASKDEF_NAME --desired-count $DESIRED_COUNT --force-new-deployment
             }
         }
