@@ -6,20 +6,20 @@ pipeline {
             steps {
                 sh '''
                     echo 'Building the demo ngnix docker image..'
-                    la -la
+                    ls -la
                     pwd
                     docker build -t nginx -t .
-              '''  
+             '''  
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Sonarqube Testing In Progress..'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying to Amazon ECS....'
             }
         }
     }
