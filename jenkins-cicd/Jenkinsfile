@@ -5,9 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    echo 'Building..'
-                    pwd
-                    ls -la
+                    echo 'Building the demo ngnix docker image..'
+                    docker build -t nginx -t .
               '''  
             }
         }
