@@ -28,9 +28,6 @@
    "family": "avv-jenkins-cicd-demo",
    "memory": "512",
    "networkMode": "awsvpc",
-   "runtimePlatform": {
-        "operatingSystemFamily": "LINUX"
-   },
    "requiresCompatibilities": [ 
        "FARGATE" 
     ]
