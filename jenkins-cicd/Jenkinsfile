@@ -16,9 +16,9 @@ pipeline {
             steps {
                 sh '''
                     cd jenkins-cicd/
-                    echo 'Building the cicd demo ngnix docker image..'
-                    docker build -t ${env.SERVICE_NAME}:latest .
-             '''  
+                    echo "Building the cicd demo ngnix docker image.."
+                    docker build -t ${env.SERVICE_NAME} .
+              '''  
             }
         }
         stage('Test') {
