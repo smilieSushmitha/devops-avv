@@ -16,10 +16,8 @@ pipeline {
             steps {
                 sh '''
                     cd jenkins-cicd/
-                    echo 'Building the demo ngnix docker image..'
-                    ls -la
-                    pwd
-                    docker build -t ngnix1 .
+                    echo 'Building the cicd demo ngnix docker image..'
+                    docker build -t $SERVICE_NAME:latest .
              '''  
             }
         }
