@@ -2,16 +2,16 @@
    "containerDefinitions": [ 
       { 
          "essential": true,
-          "image": "250155391967.dkr.ecr.us-east-1.amazonaws.com/avv-jenkins-cdcd-demo:latest",
+          "image": "250155391967.dkr.ecr.us-east-1.amazonaws.com/avv-jenkins-cicd-demo:latest",
           "logConfiguration": { 
             "logDriver": "awslogs",
             "options": { 
-               "awslogs-group" : "/ecs/avv-jenkins-cdcd-demo",
+               "awslogs-group" : "/ecs/avv-jenkins-cicd-demo",
                "awslogs-region": "us-east-1",
                "awslogs-stream-prefix": "ecs"
             }
          },
-         "name": "avv-jenkins-cdcd-demo",
+         "name": "avv-jenkins-cicd-demo",
          "entryPoint": [],
          "command": [],
          "portMappings": [ 
@@ -25,7 +25,7 @@
    ],
    "cpu": "256",
    "executionRoleArn": "arn:aws:iam::250155391967:role/ecsTaskExecutionRole",
-   "family": "avv-jenkins-cdcd-demo",
+   "family": "avv-jenkins-cicd-demo",
    "memory": "512",
    "networkMode": "awsvpc",
    "runtimePlatform": {
