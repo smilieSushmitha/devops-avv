@@ -35,6 +35,7 @@ pipeline {
               sh '''
                 echo 'Deploying to Amazon ECS....'
                 docker tag ${SERVICE_NAME}:latest ${REPOSITORY_URI}:latest
+                eval $(aws ecr get-login --no-include-email --region ${REGION})
                 docker push ${REPOSITORY_URI}:latest
                 echo 'Setting desired container count to 0'
                 aws ecs update-service --cluster ${CLUSTER} --service ${SERVICE_NAME} --task-definition ${TASKDEF_NAME} --desired-count 0
