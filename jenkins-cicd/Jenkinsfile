@@ -17,7 +17,7 @@ pipeline {
                 sh '''
                     cd jenkins-cicd/
                     echo "Building the cicd demo ngnix docker image.."
-                    docker build -t ${env.SERVICE_NAME} .
+                    docker build -t "${env.SERVICE_NAME}" .
               '''  
             }
         }
