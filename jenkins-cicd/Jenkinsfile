@@ -9,8 +9,8 @@ pipeline {
             DESIRED_COUNT=1
             REPOSITORY_NAME='avv-jenkins-cicd-demo'
             REPOSITORY_URI="${env.AWS_ACCOUNT}.dkr.ecr.${env.REGION}.amazonaws.com/${env.REPOSITORY_NAME}"
-            SONARQUBE_ENDPOINT=http://sonarqube.otione.com:9000
-            SONARQUBE_TOKEN=be79e7ef5e8d44cfcd8181c914b673253eb8a9f0
+            SONARQUBE_ENDPOINT='http://sonarqube.otione.com:9000'
+            SONARQUBE_TOKEN='be79e7ef5e8d44cfcd8181c914b673253eb8a9f0'
     }
     agent any
     stages {
