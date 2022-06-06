@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Code Quality and Code Security Testing using Sonarqube.. '
                 echo 'Testing in progress..'
+                echo 'The deployment would be failing at this stage if any codequality issues or vulnerability is detected in the code'
             }
         }
         stage('Deploy') {
