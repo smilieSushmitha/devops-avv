@@ -17,28 +17,32 @@ pipeline {
                 sh '''
                     cd jenkins-cicd/
                     echo 'Building the cicd demo ngnix docker image..'
-                    docker build -t ${SERVICE_NAME}:latest .
+                    docker build -t ${env.SERVICE_NAME}:latest .
              '''  
             }
         }
         stage('Test') {
             steps {
+               sh '''
                 echo 'Code Quality and Code Security Testing using Sonarqube.. '
                 echo 'Testing in progress..'
                 echo 'The deployment would be failing at this stage if any codequality issues or vulnerability is detected in the code'
+             '''
             }
         }
         stage('Deploy') {
             steps {
+              sh '''
                 echo 'Deploying to Amazon ECS....'
                 docker tag ${env.SERVICE_NAME}:latest ${env.REPOSITORY_URI}:latest
-                docker push ${REPOSITORY_URI}:latest
+                docker push ${env.REPOSITORY_URI}:latest
                 echo 'Setting desired container count to 0'
-                aws ecs update-service --cluster ${CLUSTER} --service $SERVICE_NAME --task-definition $TASKDEF_NAME --desired-count 0
+                aws ecs update-service --cluster ${env.CLUSTER} --service ${env.SERVICE_NAME} --task-definition ${env.TASKDEF_NAME} --desired-count 0
                 echo 'Updating task definition'
-                aws ecs register-task-definition --cli-input-json file://$TASKDEF_FILE
-                echo 'Deploying to ECS Cluster: $CLUSTER'
-                aws ecs update-service --cluster $CLUSTER --service $SERVICE_NAME --task-definition $TASKDEF_NAME --desired-count $DESIRED_COUNT --force-new-deployment
+                aws ecs register-task-definition --cli-input-json file://${env.TASKDEF_FILE}
+                echo 'Deploying to ECS Cluster: ${CLUSTER}'
+                aws ecs update-service --cluster ${CLUSTER} --service ${SERVICE_NAME} --task-definition ${TASKDEF_NAME} --desired-count ${DESIRED_COUNT} --force-new-deployment
+              '''
             }
         }
     }
