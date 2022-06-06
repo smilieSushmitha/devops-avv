@@ -33,6 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
               sh '''
+                cd jenkins-cicd/
                 echo 'Deploying to Amazon ECS....'
                 docker tag ${SERVICE_NAME}:latest ${REPOSITORY_URI}:latest
                 eval $(aws ecr get-login --no-include-email --region ${REGION})
