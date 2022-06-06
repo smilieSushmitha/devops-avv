@@ -3,11 +3,11 @@ pipeline {
             REGION="us-east-1"
             CLUSTER="avv-cicd-demo"
             AWS_ACCOUNT="250155391967"
-            SERVICE_NAME="avv-jenkins-cdcd-demo"
-            TASKDEF_NAME="avv-jenkins-cdcd-demo"
+            SERVICE_NAME="avv-jenkins-cicd-demo"
+            TASKDEF_NAME="avv-jenkins-cicd-demo"
             TASKDEF_FILE="ecs_task_def.json"
             DESIRED_COUNT=1
-            REPOSITORY_NAME="avv-jenkins-cdcd-demo"
+            REPOSITORY_NAME="avv-jenkins-cicd-demo"
             REPOSITORY_URI="$AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com/$REPOSITORY_NAME"
     }
     agent any
