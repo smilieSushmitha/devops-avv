@@ -9,7 +9,7 @@ pipeline {
                     echo 'Building the demo ngnix docker image..'
                     ls -la
                     pwd
-                    docker build -t nginx .
+                    docker build -t ngnix1 .
              '''  
             }
         }
