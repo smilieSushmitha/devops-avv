@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                    cd jenkins-cicd/
                     echo 'Building the demo ngnix docker image..'
                     ls -la
                     pwd
