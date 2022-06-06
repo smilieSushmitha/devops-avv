@@ -8,13 +8,14 @@ pipeline {
                     echo 'Building the demo ngnix docker image..'
                     ls -la
                     pwd
-                    docker build -t nginx -t .
+                    docker build -t nginx .
              '''  
             }
         }
         stage('Test') {
             steps {
-                echo 'Sonarqube Testing In Progress..'
+                echo 'Code Quality and Code Security Testing using Sonarqube.. '
+                echo 'Testing in progress..'
             }
         }
         stage('Deploy') {
